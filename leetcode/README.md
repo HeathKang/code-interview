@@ -37,6 +37,7 @@ Use these labels when describing the technique behind a solution:
 | Prefix and suffix accumulation | Combine information from left and right passes | Prefix value and suffix value | Two linear passes | `0238 Product of Array Except Self` |
 | Sliding window | Maintain a contiguous range that satisfies a constraint | Left and right boundaries plus window statistics | Two pointers over one array | Longest substring without repeating characters |
 | Two pointers | Use two indices to coordinate positions | Two moving indices, sometimes with extra counts | `i` and `j` moving independently | Two Sum II, container-style problems |
+| Recursive DFS | Query each subtree, then combine the child answers at the current node | Return value from each recursive call | Base case for empty node, then recurse left/right | `0104 Maximum Depth of Binary Tree` |
 
 Quick rule of thumb:
 
@@ -47,3 +48,4 @@ Quick rule of thumb:
 - If you need to combine left and right context, it is usually prefix and suffix accumulation.
 - If you need a contiguous segment that stays valid, it is usually sliding window.
 - If the problem is about coordinating two positions, it is usually two pointers.
+- If you query a tree recursively, first define what each subtree should return, handle the empty-node base case, then combine the left and right answers at the current node.
