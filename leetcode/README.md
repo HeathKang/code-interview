@@ -38,6 +38,7 @@ Use these labels when describing the technique behind a solution:
 | Sliding window | Maintain a contiguous range that satisfies a constraint | Left and right boundaries plus window statistics | Two pointers over one array | Longest substring without repeating characters |
 | Two pointers | Use two indices to coordinate positions | Two moving indices, sometimes with extra counts | `i` and `j` moving independently | Two Sum II, container-style problems |
 | Recursive DFS | Query each subtree, then combine the child answers at the current node | Return value from each recursive call | Base case for empty node, then recurse left/right | `0104 Maximum Depth of Binary Tree` |
+| Recursive DFS with index map | Rebuild a tree by taking the root from one traversal and splitting left/right ranges in inorder | Traversal boundaries plus value-to-index map | Root from preorder first or postorder last, then recurse on child ranges | `0105` / `0106` build tree |
 
 Quick rule of thumb:
 
@@ -49,3 +50,4 @@ Quick rule of thumb:
 - If you need a contiguous segment that stays valid, it is usually sliding window.
 - If the problem is about coordinating two positions, it is usually two pointers.
 - If you query a tree recursively, first define what each subtree should return, handle the empty-node base case, then combine the left and right answers at the current node.
+- If you build a tree from inorder plus preorder/postorder, use preorder's first value or postorder's last value as the root, find that root in inorder, then use the left/right subtree size to calculate both child traversal ranges.
