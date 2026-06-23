@@ -126,3 +126,11 @@ def solve(n):
 ```
 
 DP key point: do not start from code. First name the state and recurrence; the code is just base cases plus either memoization or loop order.
+
+## Linked-List Cycle Key Point
+
+- Move `slow` one node at a time and `fast` two nodes at a time.
+- If `fast` reaches `None`, the list has no cycle.
+- If a cycle exists, both pointers eventually enter it and `fast` catches `slow`.
+- Compare node identity (`slow is fast`), not node values, because different nodes may store the same value.
+- Complexity: `O(n)` time and `O(1)` extra space.
